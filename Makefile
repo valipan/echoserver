@@ -30,6 +30,10 @@ server_erlang: server_erlang.erl
 server_libmill: server_libmill.c
 	$(CC) $(CFLAGS) $< -o $@ -lmill
 
+server_zewo: 
+	cd swift/zewo && swift build --configuration release
+	cp swift/zewo/.build/release/server_zewo .
+
 client_libmill: client_libmill.c
 	$(CC) $(CFLAGS) $< -o $@ -lmill
 
